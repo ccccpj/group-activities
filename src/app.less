@@ -1,0 +1,169 @@
+/* 全局样式 - 直接定义变量和样式，不使用@import和@extend */
+
+/* 颜色变量 */
+@primary-color: #FF6B95; /* 主色调-粉色 */
+@primary-light: #FF9EC4; /* 浅粉色 */
+@secondary-color: #7986CB; /* 次要色调-淡紫色 */
+@secondary-light: #C5CAE9; /* 浅紫色 */
+@background-color: #FFF5F7; /* 背景色-柔和粉色 */
+@input-bg: #F8F8FF; /* 输入框背景色 */
+@hint-bg: #FFF8E1; /* 提示背景色 */
+@hint-border: #FFCC80; /* 提示边框色 */
+@text-color: #5D5A6C; /* 文字颜色 */
+@light-text: #9E9E9E; /* 浅色文字 */
+
+/* 应用所有页面应用可爱胶囊风格 */
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #FFF5F7;
+}
+
+/* 让所有页面容器应用通用样式 - 直接定义样式 */
+.create-page,
+.create-detail-page,
+.detail-page,
+.register-page,
+.checkin-page,
+.summary-page,
+.webview-container {
+  /* 页面背景 */
+  background-color: @background-color;
+  
+  /* 表单项 */
+  .form-item {
+    margin-bottom: 25px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* 标签 */
+  .label, .form-label, .section-title {
+    font-size: 18px;
+    margin-bottom: 12px;
+    font-weight: 500;
+    color: @primary-color;
+  }
+  
+  /* 输入框和文本域 */
+  input, textarea, .picker-value, .form-input, .form-textarea {
+    width: 100%;
+    background-color: @input-bg;
+    border-radius: 30px; /* 胶囊形状 */
+    padding: 16px 20px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: 2px solid @primary-light;
+    color: @text-color;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  input:focus, textarea:focus, .form-input:focus, .form-textarea:focus {
+    border-color: @primary-light;
+    box-shadow: 0 2px 8px rgba(255, 158, 196, 0.2);
+    outline: none;
+  }
+  
+  /* 文本域特殊处理 */
+  textarea, .form-textarea {
+    border-radius: 20px;
+  }
+  
+  /* 按钮 */
+  .btn, .submit-btn, button {
+    background: linear-gradient(to right, @primary-light, @primary-color);
+    color: white;
+    text-align: center;
+    border-radius: 40px; /* 更圆润的胶囊形状 */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    box-shadow: 0 5px 15px rgba(255, 107, 149, 0.3);
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    border: none;
+  }
+  
+  .btn:active, .submit-btn:active, button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(255, 107, 149, 0.3);
+  }
+  
+  /* 选项卡 */
+  .tab {
+    border-radius: 30px;
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .tab.active {
+    background-color: @primary-color;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 107, 149, 0.2);
+  }
+  
+  /* 卡片 */
+  .card, .activity-card, .stats-card, .materials-card, .participants-card, .activity-info {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 2px solid @secondary-light;
+  }
+  
+  /* 提示信息 */
+  .tips, .form-tip, .link-tips {
+    margin-top: 10px;
+    font-size: 12px;
+    color: @light-text;
+    padding: 8px 15px;
+    text-align: center;
+    background-color: @hint-bg;
+    border-radius: 20px;
+    border: 1px dashed @hint-border;
+  }
+  
+  /* 计数器按钮 */
+  .counter-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: @input-bg;
+    border: 2px solid @secondary-light;
+    font-size: 20px;
+    font-weight: bold;
+    color: @primary-color;
+    transition: all 0.3s ease;
+  }
+  
+  .counter-btn.minus {
+    border-radius: 30px 0 0 30px;
+  }
+  
+  .counter-btn.plus {
+    border-radius: 0 30px 30px 0;
+  }
+  
+  .counter-btn:active {
+    background-color: @primary-light;
+    color: white;
+  }
+  
+  /* 计数器值 */
+  .counter-value {
+    width: 60px;
+    height: 40px;
+    border-top: 2px solid @secondary-light;
+    border-bottom: 2px solid @secondary-light;
+    text-align: center;
+    font-size: 16px;
+    background-color: @input-bg;
+    color: @text-color;
+  }
+}

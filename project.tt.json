@@ -1,0 +1,13 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "group-activities-app",
+  "description": "群活动",
+  "appid": "wx5d871113d3de3a8d",
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "postcss": false,
+    "minified": false
+  },
+  "compileType": "miniprogram"
+}
